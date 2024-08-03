@@ -1,14 +1,14 @@
 {
-    "name": "by-blog",
-    "title": "BY Blog",
-    "author": "BY <qiubaiyingios@163.com>",
+    "name": "ahao-blog",
+    "title": "AHao Blog",
+    "author": "AHao <zhihao_ren@126.com>",
     "version": "1.7.0",
-    "homepage": "http://qiubaiying.github.io",
+    "homepage": "http://godothao.github.io",
     "repository": {
         "type": "git",
-        "url": "https://github.com/qiubaiying/qiubaiying.github.io"
+        "url": "https://github.com/GodotHao/godothao.github.io"
     },
-    "bugs": "https://github.com/qiubaiying/qiubaiying.github.io/issues",
+    "bugs": "https://github.com/GodotHao/godothao.github.io/issues",
     "devDependencies": {
         "grunt": ">=1.3.0"
         "grunt-contrib-less": "~0.11.4",
