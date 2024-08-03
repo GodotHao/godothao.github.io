@@ -1,0 +1,134 @@
+#! https://zhuanlan.zhihu.com/p/690838189
+# 热力学中的麦克斯韦关系
+
+## Maxwell关系
+
+推导Maxwell关系，下面这四个微分式还是蛮重要的，记住这四个微分可以非常直观的得到Maxwell关系
+$$
+\mathrm{d}U = T\mathrm{d}S - p\mathrm{d}V\\[2ex] 
+\mathrm{d}H = T\mathrm{d}S + V\mathrm{d}p\\[2ex]
+\mathrm{d}F = -S\mathrm{d}T - p\mathrm{d}V \\[2ex]
+\mathrm{d}G = -S\mathrm{d}T + V\mathrm{d}p
+$$
+
+那么根据全微分的条件，可以得到
+$$
+\left(\frac{\partial T}{\partial V}\right)_S = - \left(\frac{\partial p}{\partial S}\right)_V \\[2ex]
+\left(\frac{\partial T}{\partial p}\right)_S =  \left(\frac{\partial V}{\partial S}\right)_p \\[2ex]
+\left(\frac{\partial S}{\partial V}\right)_T =  \left(\frac{\partial p}{\partial T}\right)_V \\[2ex]
+\left(\frac{\partial S}{\partial p}\right)_T = - \left(\frac{\partial V}{\partial T}\right)_p
+$$
+
+Maxwell关系的得到伴随着诸多限制条件。我们需要这是一个简单的、处在平衡态的系统，进行的过程为可逆过程。Maxwell关系为我们提供了关于$S、T、p、V$的偏导数之间的关系。在这四个量中，有两个强度量，剩下两个为广延量。通过Maxwell关系，可以将一些无法通过实验直接测量的量表示成可测量的物理量，下面有几个例子。
+
+## 依据链式求导法则获得的常用结论
+
+选取$T、V$作为状态参量
+$$
+\begin{align*}
+    \mathrm{d}U &= T\mathrm{d}S - p\mathrm{d}V\\[2ex]
+    &= T\left[\left(\frac{\partial S}{\partial V}\right)_T\mathrm{d}V +\left(\frac{\partial S}{\partial T}\right)_V\mathrm{d}T \right] -p\mathrm{d}V\\[3ex]
+    &= \left[T\left(\frac{\partial S}{\partial V}\right)_T -p\right]\mathrm{d}V+T\left(\frac{\partial S}{\partial T}\right)_V\mathrm{d}T 
+\end{align*}
+$$
+
+即
+$$
+\left(\frac{\partial U}{\partial V}\right)_T=T\left(\frac{\partial S}{\partial V}\right)_T -p
+$$
+
+再由Maxwell关系
+$$
+\left(\frac{\partial U}{\partial V}\right)_T=T\left(\frac{\partial p}{\partial T}\right)_V -p
+$$
+
+对焓做类似的操作，容易得到
+$$
+\left(\frac{\partial H}{\partial p}\right)_T=V - T\left(\frac{\partial V}{\partial T}\right)_p
+$$
+
+上面的关系可以用来对基本的热力学函数（物态方程、内能和熵）进行求解。
+我们把内能的全微分写作
+$$
+\mathrm{d}U = C_V\mathrm{d}T +\left[T\left(\frac{\partial p}{\partial T}\right)_V- p\right]\mathrm{d}V
+$$
+
+内能便可由上式积分得到。
+同样，熵的全微分可以写作
+$$
+\mathrm{d}S = \frac{C_V}{T}\mathrm{d}T +\left(\frac{\partial p}{\partial T}\right)_V\mathrm{d}V
+$$
+
+同理。
+
+## 一些量的关系
+
+讨论$C_V$和$C_p$之间的关系
+$$
+\begin{align*}
+    C_p &= T\left(\frac{\partial S}{\partial T}\right)_p = T\frac{\partial(S,p)}{\partial(T,p)}\\[3ex]
+    &=T\frac{\frac{\partial(S,p)}{\partial(T,V)}}{\frac{\partial(T,p)}{\partial(T,V)}}=T\frac{\left(\frac{\partial S}{\partial T}\right)_V\left(\frac{\partial p}{\partial V}\right)_T-\left(\frac{\partial S}{\partial V}\right)_T \left(\frac{\partial p}{\partial T}\right)_V}{\left(\frac{\partial p}{\partial V}\right)_T}\\[3ex]
+    &=C_V - T\frac{\left(\frac{\partial p}{\partial T}\right)_V^2}{\left(\frac{\partial p}{\partial V}\right)_T} = C_V + \frac{VT\alpha^2}{\kappa_T}
+\end{align*}
+$$
+
+讨论$\kappa_S$与$\kappa_T$之间的关系
+$$
+\begin{align*}
+    \frac{\kappa_S}{\kappa_T} = \frac{\frac{\partial(V,S)}{\partial(p,S)}}{\frac{\partial(V,T)}{\partial(p,T)}} = \frac{\frac{\partial(V,S)}{\partial(V,T)}}{\frac{\partial(p,S)}{\partial(p,T)}} = \frac{C_V}{C_p}
+\end{align*}
+$$
+
+可以看到Jacobi行列式还是相当方便的。
+
+## 有关气体绝热膨胀和节流过程
+
+### 绝热膨胀
+
+对于理想气体而言，其物态方程为
+$$
+pV=nRT
+$$
+
+那么
+$$
+\left(\frac{\partial U}{\partial V}\right)_T=T\left(\frac{\partial p}{\partial T}\right)_V -p =\frac{nRT}{V}-p=0
+$$
+
+即理想气体的内能只与温度有关，即焦耳定律。
+那么
+$$
+\left(\frac{\partial T}{\partial V}\right)_U = - \left(\frac{\partial U}{\partial V}\right)_T\left(\frac{\partial T}{\partial U}\right)_V = 0
+$$
+
+在绝热自由膨胀中理想气体的温度不变，这是焦耳实验的结果。
+接下来我们考虑实际气体。对于绝热膨胀过程，气体的熵保持不变。考虑温度和压强的变化情况
+$$
+\left(\frac{\partial T}{\partial p}\right)_S = \frac{\partial(T,S)}{\partial(p,S)} = -\left(\frac{\partial S}{\partial p}\right)_T\left/\left(\frac{\partial S}{\partial T}\right)_p\right. = \frac{VT\alpha}{C_p}>0
+$$
+
+也就是说，在绝热膨胀的过程中，气体的压强减小，温度也随之减小，这提供了一种获得低温的思路。
+
+### 节流过程
+
+在节流过程中，我们构造绝热系统中气体从较高压强到较低压强传输的过程，其中在节流过程前后，气体的温度发生变化。
+此处定义焦耳-汤姆逊系数
+$$
+\mu_{J-T}=\left(\frac{\partial T}{\partial p}\right)_H
+$$
+
+有
+$$
+\begin{align*}
+    \mu_{J-T} &= -\left(\frac{\partial H}{\partial p}\right)_T\left/\left(\frac{\partial H}{\partial T}\right)_p\right.\\[3ex]
+    &=\frac{1}{C_p}\left[T\left(\frac{\partial V}{\partial T}\right)_p-V\right]\\[3ex]
+    &=\frac{V}{C_p}(T\alpha-1)
+\end{align*}
+$$
+
+对于理想气体而言
+$$
+\alpha =\frac{1}{T}\qquad \mu=0
+$$
+
+对于实际气体而言，$\alpha=\frac{1}{T}$对应着$T-p$图上的一条曲线，称之为反转曲线，在反转曲线两侧，气体经过节流过程的温度变化情况相反，在此不在赘述。同样，节流过程也能用来使气体降温而液化。
