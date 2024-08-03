@@ -13,6 +13,18 @@ tags:
 
 >**BYPhoneNumTF** 一个电话号码格式的文本框
 
+<head>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: {
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+            inlineMath: [['$','$']]
+            }
+        });
+    </script>
+</head>
+
 #! https://zhuanlan.zhihu.com/p/691653888
 # 普通天文学-恒星模型
 [TOC]
